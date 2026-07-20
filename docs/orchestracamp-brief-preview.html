@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anabaptist Orchestra Camp — Lovable Build Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-cream: #f7f4ee;
+  --bg-warm: #f0ece4;
+  --text-ink: #1a1814;
+  --text-muted: #5a5550;
+  --text-light: #8a8580;
+  --accent-terracotta: #b34a2a;
+  --accent-terracotta-light: #c96b4a;
+  --deep-dark: #14110d;
+  --border: #e0dbd3;
+  --border-light: #edeae4;
+  --success: #2d6a4f;
+  --warning: #b3592a;
+  --info: #2a6b8a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-cream);
+  color: var(--text-ink);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+header {
+  background: var(--deep-dark);
+  padding: 4rem 0 3rem;
+  position: relative;
+  overflow: hidden;
+}
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-terracotta);
+}
+header .container { position: relative; z-index: 2; }
+.badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--accent-terracotta);
+  color: white;
+  padding: 0.4rem 0.9rem;
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+}
+header h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: var(--bg-cream);
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+header h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-terracotta-light);
+}
+header .subtitle {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 600px;
+  line-height: 1.6;
+}
+header .meta {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+}
+header .meta span { display: flex; align-items: center; gap: 0.4rem; }
+header .meta span::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-terracotta);
+}
+
+/* Navigation */
+.toc {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.toc .container { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+.toc a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.toc a:hover, .toc a.active {
+  color: var(--accent-terracotta);
+  border-bottom-color: var(--accent-terracotta);
+}
+
+/* Section Headers */
+section { padding: 3rem 0; }
+section + section { border-top: 1px solid var(--border-light); }
+
+h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--text-ink);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+h2 em { font-style: italic; font-weight: 400; }
+
+h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-ink);
+  margin: 2rem 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin: 1.8rem 0 0.8rem;
+}
+
+p { margin-bottom: 1rem; color: var(--text-muted); }
+
+/* Phase Cards */
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.phase-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+.phase-card:hover {
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.phase-card .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-terracotta);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+.phase-card h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-ink);
+  margin: 0 0 0.6rem;
+}
+.phase-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Color Palette */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.color-swatch {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.color-swatch .swatch { height: 80px; }
+.color-swatch .label {
+  padding: 0.75rem;
+  background: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+.color-swatch .label .name {
+  font-weight: 600;
+  color: var(--text-ink);
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+}
+.color-swatch .label .hex { color: var(--text-light); }
+
+/* Code Blocks */
+pre, code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+pre {
+  background: var(--deep-dark);
+  color: #e8e4df;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid #2a2722;
+}
+pre .comment { color: #6a655f; }
+pre .keyword { color: #c96b4a; }
+pre .string { color: #7a9a6f; }
+pre .function { color: #8a9aaa; }
+pre .number { color: #b3a07a; }
+
+code {
+  background: var(--bg-warm);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  color: var(--accent-terracotta);
+  font-size: 0.85em;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+th {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border);
+  background: white;
+}
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-muted);
+  vertical-align: top;
+}
+tr:hover td { background: var(--bg-warm); }
+
+/* Lists */
+ul, ol { margin: 1rem 0 1rem 1.5rem; }
+li { margin-bottom: 0.5rem; color: var(--text-muted); }
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  margin-left: 0;
+}
+.checklist li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.7rem;
+}
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.checklist li:hover::before { border-color: var(--accent-terracotta); }
+.checklist li.checked::before {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+.checklist li.checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0.5rem;
+  width: 4px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Note / Warning boxes */
+.note {
+  background: white;
+  border-left: 4px solid var(--accent-terracotta);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.note-title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--accent-terracotta);
+  margin-bottom: 0.4rem;
+}
+.note p { margin: 0; font-size: 0.85rem; }
+
+/* Blockquote */
+blockquote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  border-left: 3px solid var(--accent-terracotta);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  line-height: 1.7;
+}
+
+/* Asset item */
+.asset-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.asset-item .asset-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-ink);
+  margin-bottom: 0.3rem;
+}
+.asset-item .asset-url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  word-break: break-all;
+}
+.asset-item .asset-usage {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* Footer */
+footer {
+  background: var(--deep-dark);
+  color: var(--text-light);
+  padding: 3rem 0 2rem;
+  margin-top: 2rem;
+  border-top: 4px solid var(--accent-terracotta);
+}
+footer p { color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.5rem; }
+footer .footer-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--bg-cream);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .container { padding: 0 1rem; }
+  header { padding: 2.5rem 0 2rem; }
+  header h1 { font-size: 1.8rem; }
+  .toc { display: none; }
+  .phase-grid { grid-template-columns: 1fr; }
+  .color-grid { grid-template-columns: 1fr 1fr; }
+  pre { padding: 1rem; font-size: 0.75rem; }
+  table { font-size: 0.75rem; }
+  th, td { padding: 0.5rem 0.75rem; }
+}
+
+/* Print */
+@media print {
+  .toc { display: none; }
+  body { font-size: 12pt; }
+  pre { white-space: pre-wrap; page-break-inside: avoid; }
+  section { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="badge">Lovable Build Brief</div>
+    <h1>Anabaptist Orchestra Camp<br><em>Website Redesign</em></h1>
+    <p class="subtitle">Complete rebuild from WordPress to Lovable — modern, responsive, and backend-editable for non-technical camp staff.</p>
+    <div class="meta">
+      <span>Prepared July 19, 2026</span>
+      <span>2027 Camp Dates: August 12–15</span>
+      <span>Platform: Lovable + Supabase</span>
+    </div>
+  </div>
+</header>
+
+<!-- Table of Contents -->
+<nav class="toc">
+  <div class="container">
+    <a href="#phases">Execution Order</a>
+    <a href="#brand">Brand Tokens</a>
+    <a href="#schema">Supabase Schema</a>
+    <a href="#sitemap">Site Map</a>
+    <a href="#content">Content</a>
+    <a href="#assets">Assets</a>
+    <a href="#seo">SEO</a>
+    <a href="#criteria">Acceptance</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- Execution Order -->
+<section id="phases">
+  <div class="container">
+    <h2><em>Execution Order</em> — Build in Phases</h2>
+    <p>Paste each phase into Lovable one at a time. Each phase builds on the previous, establishing the visual system first so subsequent work inherits the identity automatically.</p>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="num">Phase 1</div>
+        <h4>Project Scaffold & Brand Tokens</h4>
+        <p>Set up the Lovable project, configure the design system with brand tokens, typography, and color palette. Establish global CSS variables and component primitives.</p>
+      </div>
+      <div class="phase-card">
+        <div class="num">Phase 2</div>
+        <h4>Homepage Hero & Layout Shell</h4>
+        <p>Build the full homepage with hero section, 2027 camp date announcement, navigation, footer, and responsive layout shell. Dark theme with navy and gold accents.</p>
+      </div>
+      <div class="phase-card">
+        <div class="num">Phase 3</div>
+        <h4>Content Pages</h4>
+        <p>Build About, FAQ, Media, and Contact pages. About includes team bios, history, and map. FAQ uses accordion layout. Media has concert video grid. Contact has form and direct contacts.</p>
+      </div>
+      <div class="phase-card">
+        <div class="num">Phase 4</div>
+        <h4>Blog System</h4>
+        <p>Implement Supabase-backed blog with posts table, admin CRUD interface, post listing with pagination, and individual post detail pages.</p>
+      </div>
+      <div class="phase-card">
+        <div class="num">Phase 5</div>
+        <h4>Registration & Enrollment</h4>
+        <p>Build enrollment page with pricing tiers, registration logic, and Supabase integration. Include timeline (early bird, regular, late) and closed state.</p>
+      </div>
+      <div class="phase-card">
+        <div class="num">Phase 6</div>
+        <h4>Polish, SEO, Testing & Launch</h4>
+        <p>Add meta tags, Open Graph, responsive refinements, animation polish, accessibility audit, and content population with 2027 dates. Set up URL redirects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brand Tokens -->
+<section id="brand">
+  <div class="container">
+    <h2><em>Brand Tokens</em> — Do Not Default to Generic</h2>
+    <p>The new site uses a refined, classical aesthetic appropriate for an Anabaptist music camp. Deep navy backgrounds, warm gold accents, and elegant serif typography.</p>
+
+    <h4>Color Palette</h4>
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="swatch" style="background:#0f172a"></div>
+        <div class="label">
+          <span class="name">Deep Navy</span>
+          <span class="hex">#0f172a — Primary background</span>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch" style="background:#1e293b"></div>
+        <div class="label">
+          <span class="name">Card Navy</span>
+          <span class="hex">#1e293b — Cards, sections</span>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch" style="background:#d4a853"></div>
+        <div class="label">
+          <span class="name">Warm Gold</span>
+          <span class="hex">#d4a853 — CTAs, accents</span>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch" style="background:#f8fafc"></div>
+        <div class="label">
+          <span class="name">Near White</span>
+          <span class="hex">#f8fafc — Primary text</span>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch" style="background:#94a3b8"></div>
+        <div class="label">
+          <span class="name">Slate Gray</span>
+          <span class="hex">#94a3b8 — Body text</span>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch" style="background:#334155"></div>
+        <div class="label">
+          <span class="name">Elevated Border</span>
+          <span class="hex">#334155 — Borders, dividers</span>
+        </div>
+      </div>
+    </div>
+
+    <h4>Typography</h4>
+    <table>
+      <thead><tr><th>Role</th><th>Font</th><th>Usage</th></tr></thead>
+      <tbody>
+        <tr><td>Display</td><td><code>Playfair Display</code>, Georgia, serif</td><td>Hero headings, camp name, page titles</td></tr>
+        <tr><td>Body</td><td><code>Inter</code>, -apple-system, sans-serif</td><td>Body text, navigation, UI elements</td></tr>
+        <tr><td>Accent</td><td><code>Caveat</code>, cursive</td><td>Taglines, quotes, handwritten accents</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Type Scale</h4>
+    <table>
+      <thead><tr><th>Token</th><th>Size</th><th>Usage</th></tr></thead>
+      <tbody>
+        <tr><td><code>text-xs</code></td><td>0.75rem</td><td>Captions, meta</td></tr>
+        <tr><td><code>text-sm</code></td><td>0.875rem</td><td>Secondary text, nav</td></tr>
+        <tr><td><code>text-base</code></td><td>1rem</td><td>Body text</td></tr>
+        <tr><td><code>text-lg</code></td><td>1.125rem</td><td>Lead paragraphs</td></tr>
+        <tr><td><code>text-xl</code></td><td>1.25rem</td><td>Subheadings</td></tr>
+        <tr><td><code>text-2xl</code></td><td>1.5rem</td><td>Section headings</td></tr>
+        <tr><td><code>text-3xl</code></td><td>1.875rem</td><td>Page titles</td></tr>
+        <tr><td><code>text-4xl</code></td><td>2.25rem</td><td>Hero heading</td></tr>
+        <tr><td><code>text-5xl</code></td><td>3rem</td><td>Main hero display</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Supabase Schema -->
+<section id="schema">
+  <div class="container">
+    <h2><em>Supabase Schema</em> — Backend-Editable Content</h2>
+    <p>All tables use RLS policies. Public can read published content. Authenticated admins have full access.</p>
+
+    <h3><code>posts</code> — Blog & Announcements</h3>
+    <pre><code>create table posts (
+  id uuid default gen_random_uuid() primary key,
+  title text not null,
+  slug text not null unique,
+  excerpt text,
+  content text not null,
+  category text not null default 'announcement'
+    check (category in ('announcement', 'news', 'media')),
+  status text not null default 'draft'
+    check (status in ('draft', 'published', 'archived')),
+  featured boolean default false,
+  image_url text,
+  published_at timestamp with time zone,
+  created_at timestamp with time zone default now(),
+  updated_at timestamp with time zone default now(),
+  author_name text default 'Anabaptist Orchestra Camp'
+);
+
+-- RLS: Public reads published, admins manage all
+alter table posts enable row level security;
+
+create policy "Public can view published posts" on posts for select
+  using (status = 'published');
+
+create policy "Authenticated users can manage posts" on posts for all
+  to authenticated using (true) with check (true);</code></pre>
+
+    <h3><code>camp_settings</code> — Editable Dates & Settings</h3>
+    <pre><code>create table camp_settings (
+  id integer primary key default 1,
+  camp_year integer not null,
+  start_date date not null,
+  end_date date not null,
+  registration_opens date,
+  registration_closes date,
+  early_registration_deadline date,
+  regular_registration_deadline date,
+  location_venue text,
+  concert_venue text,
+  registration_status text default 'closed'
+    check (registration_status in ('open', 'closed', 'waitlist')),
+  updated_at timestamp with time zone default now()
+);
+
+-- Seed with 2027 data
+insert into camp_settings values (
+  1, 2027, '2027-08-12', '2027-08-15',
+  '2027-03-01', '2027-07-15', '2027-05-01', '2027-07-01',
+  'Bethel Fellowship Church, Millersburg, Ohio',
+  'Central Christian School, Kidron, Ohio',
+  'closed'
+);</code></pre>
+
+    <h3><code>team_members</code> — Steering Committee</h3>
+    <pre><code>create table team_members (
+  id uuid default gen_random_uuid() primary key,
+  name text not null,
+  role text not null,
+  location text,
+  bio text not null,
+  image_url text,
+  email text,
+  sort_order integer default 0,
+  is_active boolean default true,
+  created_at timestamp with time zone default now()
+);</code></pre>
+
+    <h3><code>media_items</code> — Concert Videos & Photos</h3>
+    <pre><code>create table media_items (
+  id uuid default gen_random_uuid() primary key,
+  title text not null,
+  description text,
+  type text not null check (type in ('video', 'photo', 'audio')),
+  url text not null,
+  thumbnail_url text,
+  year integer,
+  sort_order integer default 0,
+  is_featured boolean default false,
+  created_at timestamp with time zone default now()
+);</code></pre>
+
+    <h3><code>enrollments</code> — Registration Tracking</h3>
+    <pre><code>create table enrollments (
+  id uuid default gen_random_uuid() primary key,
+  first_name text not null,
+  last_name text not null,
+  email text not null,
+  instrument text,
+  age integer,
+  lodging_type text default 'host_family',
+  registration_fee decimal(10,2),
+  tuition_fee decimal(10,2),
+  meal_fee decimal(10,2),
+  lodging_fee decimal(10,2),
+  total_paid decimal(10,2) default 0,
+  status text default 'pending',
+  payment_status text default 'unpaid',
+  created_at timestamp with time zone default now()
+);</code></pre>
+
+    <h3><code>subscribers</code> — Email Newsletter</h3>
+    <pre><code>create table subscribers (
+  id uuid default gen_random_uuid() primary key,
+  email text not null unique,
+  subscribed_at timestamp with time zone default now(),
+  is_active boolean default true
+);</code></pre>
+  </div>
+</section>
+
+<!-- Site Map -->
+<section id="sitemap">
+  <div class="container">
+    <h2><em>Site Map</em> & Page Structure</h2>
+
+    <h4>Navigation</h4>
+    <p><strong>Logo</strong> → Home | About | Blog | Contact | Enroll | FAQ | Media</p>
+    <p><em>Note: "Choose an Instrument" eliminated per request.</em></p>
+
+    <h4>Pages</h4>
+    <table>
+      <thead><tr><th>Page</th><th>Route</th><th>Key Features</th></tr></thead>
+      <tbody>
+        <tr><td>Home</td><td><code>/</code></td><td>Hero carousel, 2027 date banner, 3-column features, blog preview, newsletter CTA</td></tr>
+        <tr><td>About</td><td><code>/about</code></td><td>Mission, history, team grid (4 members), location map</td></tr>
+        <tr><td>Blog</td><td><code>/blog</code></td><td>Post listing (paginated), featured posts, categories, admin at <code>/admin/blog</code></td></tr>
+        <tr><td>Post Detail</td><td><code>/blog/:slug</code></td><td>Full content, rich text, back link, related posts</td></tr>
+        <tr><td>FAQ</td><td><code>/faq</code></td><td>Accordion layout, 8+ sections, verbatim content from existing site</td></tr>
+        <tr><td>Enroll</td><td><code>/enroll</code></td><td>Pricing tiers, registration form, status from <code>camp_settings</code></td></tr>
+        <tr><td>Media</td><td><code>/media</code></td><td>Concert video grid (2013–2022), year filters, YouTube embeds</td></tr>
+        <tr><td>Contact</td><td><code>/contact</code></td><td>Form, direct contact cards (Sarah, Jeff, Carmen), map embed</td></tr>
+        <tr><td>Admin</td><td><code>/admin/*</code></td><td>Auth-protected: camp settings, blog, team, enrollments, media</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Content -->
+<section id="content">
+  <div class="container">
+    <h2><em>Content</em> — Copy Verbatim from Existing Site</h2>
+
+    <h3>Mission Statement</h3>
+    <blockquote>"Anabaptist Orchestra Camp exists to offer praise to the Lord by giving Anabaptist instrumental musicians the opportunity to play their instruments with other believers, to develop their skill, and to enjoy fellowship with other musicians."</blockquote>
+
+    <h3>Weekend Description</h3>
+    <blockquote>"The weekend consists of rehearsals, chapel, workshops, individual and sectional practice time, as well as time for recreation and conversation."</blockquote>
+
+    <h3>History</h3>
+    <p>In October 2011, we held the first camp with two dozen musicians, mostly strings, and a grand total of five brass and woodwinds. We played several hymns, staple classical pieces, "He Shall Feed His Flock" and "Come Unto Me" from Messiah, and others. Since then, the camp has grown significantly.</p>
+
+    <div class="note">
+      <div class="note-title">Full Content Included in Markdown File</div>
+      <p>All team bios, FAQ questions/answers, blog posts, and media items are included in the downloadable <code>orchestracamp-brief.md</code> file. Copy each text block verbatim into the corresponding Lovable components during the build.</p>
+    </div>
+
+    <h3>2027 Dates (Backend-Editable)</h3>
+    <p>August 12–15, 2027. Rehearsals at Bethel Fellowship Church, Millersburg, Ohio. Concert at Central Christian School, Kidron, Ohio. These dates are stored in <code>camp_settings</code> and can be updated by admin without touching code.</p>
+  </div>
+</section>
+
+<!-- Assets -->
+<section id="assets">
+  <div class="container">
+    <h2><em>Assets</em> — Image Inventory</h2>
+
+    <div class="asset-item">
+      <div class="asset-name">Logo</div>
+      <div class="asset-url">http://orchestracamp.info/wp-content/uploads/Orchestra-Camp-Logo.jpg</div>
+      <div class="asset-usage">Header logo, favicon source, social sharing image</div>
+    </div>
+
+    <div class="asset-item">
+      <div class="asset-name">Hero Banner — Stage/Orchestra</div>
+      <div class="asset-url">https://i0.wp.com/www.orchestracamp.info/wp-content/uploads/AOC-Banners-Stage.jpg</div>
+      <div class="asset-usage">Homepage carousel slide 1 — "Pray"</div>
+    </div>
+
+    <div class="asset-item">
+      <div class="asset-name">Hero Banner — Camp Dates</div>
+      <div class="asset-url">https://i0.wp.com/www.orchestracamp.info/wp-content/uploads/ChatGPT-Image-Jul-16-2026-05_14_47-PM.png</div>
+      <div class="asset-usage">Homepage carousel slide 2 — NEEDS 2027 REMAKE</div>
+    </div>
+
+    <div class="asset-item">
+      <div class="asset-name">Hero Banner — Violin</div>
+      <div class="asset-url">https://i0.wp.com/www.orchestracamp.info/wp-content/uploads/AOC-Banners-Violin.jpg</div>
+      <div class="asset-usage">Homepage carousel slide 3 — "Bach"</div>
+    </div>
+
+    <div class="asset-item">
+      <div class="asset-name">Hero Banner — Clarinet</div>
+      <div class="asset-url">https://i0.wp.com/www.orchestracamp.info/wp-content/uploads/AOC-Banners-Clarinet.jpg</div>
+      <div class="asset-usage">Homepage carousel slide 4 — "Mozart"</div>
+    </div>
+
+    <div class="asset-item">
+      <div class="asset-name">Hero Banner — French Horn</div>
+      <div class="asset-url">https://i0.wp.com/www.orchestracamp.info/wp-content/uploads/AOC-Banners-French-Horn.jpg</div>
+      <div class="asset-usage">Homepage carousel slide 5 — "Beethoven"</div>
+    </div>
+
+    <div class="asset-item">
+      <div class="asset-name">About Page — Violin Image</div>
+      <div class="asset-url">https://orchestracamp.info/wp-content/uploads/2012/06/Violin-jr.png</div>
+      <div class="asset-usage">About page decorative element</div>
+    </div>
+
+    <div class="note">
+      <div class="note-title">Action Required</div>
+      <p>Team member photos need to be requested from Sarah, Jeff, Deana, and Carmen. If unavailable, use initials avatars with gold-on-navy color scheme.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO -->
+<section id="seo">
+  <div class="container">
+    <h2><em>SEO</em> & Meta Configuration</h2>
+
+    <h4>Global Meta</h4>
+    <table>
+      <thead><tr><th>Property</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Title Template</td><td><code>{page_title} | Anabaptist Orchestra Camp</code></td></tr>
+        <tr><td>Default Title</td><td>Anabaptist Orchestra Camp | Serving and cultivating the instrumentalists among us</td></tr>
+        <tr><td>Description</td><td>Anabaptist Orchestra Camp offers Anabaptist instrumental musicians the opportunity to play together, develop their skills, and enjoy fellowship. Held annually in Holmes County, Ohio.</td></tr>
+        <tr><td>Keywords</td><td>anabaptist, orchestra, camp, music, instrumental, mennonite, amish, classical, christian, ohio, holmes county</td></tr>
+        <tr><td>OG Image</td><td>Generate 1200×630 navy + gold banner with 2027 dates</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Redirects from Old WordPress URLs</h4>
+    <table>
+      <thead><tr><th>Old URL</th><th>New URL</th></tr></thead>
+      <tbody>
+        <tr><td><code>/pick-an-instrument/</code></td><td><code>/</code> (page eliminated)</td></tr>
+        <tr><td><code>/anabaptist-orchestra-camp-blog/</code></td><td><code>/blog</code></td></tr>
+        <tr><td><code>/category/announcements/</code></td><td><code>/blog</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Acceptance Criteria -->
+<section id="criteria">
+  <div class="container">
+    <h2><em>Acceptance</em> Criteria</h2>
+
+    <h4>Homepage</h4>
+    <ul class="checklist">
+      <li>Hero displays "August 12–15, 2027" prominently</li>
+      <li>5-second carousel auto-rotation with manual controls</li>
+      <li>Tagline renders in italic accent font</li>
+      <li>Featured blog posts load from Supabase (3 posts)</li>
+      <li>Newsletter signup form submits to subscribers table</li>
+      <li>Responsive: single column on mobile, 3-column on desktop</li>
+    </ul>
+
+    <h4>About</h4>
+    <ul class="checklist">
+      <li>Mission statement displays full-width</li>
+      <li>Team member cards pull from team_members table</li>
+      <li>Map embed shows correct location</li>
+      <li>History section includes 2011 founding date</li>
+    </ul>
+
+    <h4>Blog</h4>
+    <ul class="checklist">
+      <li>Post listing shows published posts with pagination</li>
+      <li>Featured posts get larger card treatment</li>
+      <li>Admin can create/edit/delete at /admin/blog</li>
+      <li>Slug auto-generation from title</li>
+    </ul>
+
+    <h4>FAQ</h4>
+    <ul class="checklist">
+      <li>All questions from existing FAQ included</li>
+      <li>Accordion expands/collapses smoothly</li>
+      <li>Content is verbatim from existing site</li>
+      <li>Contact emails are clickable mailto links</li>
+    </ul>
+
+    <h4>Enroll</h4>
+    <ul class="checklist">
+      <li>Registration status from camp_settings</li>
+      <li>Pricing calculator shows correct totals</li>
+      <li>Form validates all required fields</li>
+      <li>Closed state displays "not yet open" message</li>
+    </ul>
+
+    <h4>Media</h4>
+    <ul class="checklist">
+      <li>All 7 concert years represented (2013–2022)</li>
+      <li>YouTube embeds are responsive 16:9</li>
+      <li>Year filter tabs work</li>
+    </ul>
+
+    <h4>Contact</h4>
+    <ul class="checklist">
+      <li>Form submits to Supabase + email notification</li>
+      <li>No captcha — use honeypot + rate limiting</li>
+      <li>Direct contact cards for Sarah, Jeff, Carmen</li>
+      <li>Success message after submission</li>
+    </ul>
+
+    <h4>Admin</h4>
+    <ul class="checklist">
+      <li>All routes require authentication</li>
+      <li>Camp settings editor updates camp_settings</li>
+      <li>Blog manager CRUD works</li>
+      <li>Team manager CRUD works</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-title">Anabaptist Orchestra Camp</div>
+    <p>Website Redesign Build Brief</p>
+    <p>Prepared July 19, 2026 for 2027 camp season (August 12–15, 2027)</p>
+    <p style="margin-top:1rem;font-size:0.75rem;color:#6a655f;">This brief is designed for Lovable (lovable.dev) — paste each phase one at a time.</p>
+  </div>
+</footer>
+
+</body>
+</html>
